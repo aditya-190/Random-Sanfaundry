@@ -38,19 +38,15 @@ def select_random_url():
     temporary = data
 
     if section:
-        print("Inside Section")
         temporary = list(filter(lambda datum: re.search(section, datum["Section"], re.IGNORECASE), temporary))
 
     if topic:
-        print("Inside Topic")
         temporary = list(filter(lambda datum: re.search(topic, datum["Topic"][0], re.IGNORECASE), temporary))
 
     if temporary:
-        print("Inside Temp")
         return random.choice(temporary)["URL"][0]
 
     else:
-        print("Inside Else")
         return random.choice(data)["URL"][0]
 
 
